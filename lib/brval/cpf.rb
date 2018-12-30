@@ -11,9 +11,11 @@ module Brval
 
     # function from https://gist.github.com/lucascaton/1109488
     def validate_cpf(cpf)
+      # remote_mask(cpf)
+      # Add errors after initialize CPF this class if cpf has wrong value
       return false if cpf.nil?
 
-      value = cpf.to_s.scan /[0-9]/
+      value = cpf.scan /[0-9]/
       if value.length == 11
         unless NULLS.include?(value.join)
           value = value.collect{|x| x.to_i}
