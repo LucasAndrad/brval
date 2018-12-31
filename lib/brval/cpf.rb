@@ -1,7 +1,7 @@
 module Brval
   class Cpf
 
-    def valid?(cpf)
+    def valid? cpf
       validate_cpf(cpf)
     end
 
@@ -10,7 +10,7 @@ module Brval
     NULLS = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000 01234567890}.freeze
 
     # function from https://gist.github.com/lucascaton/1109488
-    def validate_cpf(cpf)
+    def validate_cpf cpf=nil
       # remote_mask(cpf)
       # Add errors after initialize CPF this class if cpf has wrong value
       return false if cpf.nil?
