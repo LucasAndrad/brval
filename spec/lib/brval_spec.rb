@@ -30,6 +30,20 @@ RSpec.describe Brval do
         valid = Brval.cnpj_valid?(cnpj_invalid)
         expect(valid).to be(false)
       end
+
+      # Add a test with mask
+    end
+
+    context "Pis values" do
+      it "should return true .pis_valid?" do
+        valid = Brval.pis_valid?(pis_valid)
+        expect(valid).to be(true)
+      end
+
+      it "should return false .pis_valid?" do
+        valid = Brval.pis_valid?(pis_invalid)
+        expect(valid).to be(false)
+      end
       
       # Add a test with mask
     end

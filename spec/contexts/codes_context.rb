@@ -7,4 +7,8 @@ RSpec.shared_context "codes", a: :b do
   let!(:cnpj_valid_mask) { '23.428.153/0001-30' }
   let!(:cnpj_invalid) { '37711352000100' }
 
+  let!(:pis_valid) { '37893418268' }
+  let!(:pis_valid_mask) { '648.79586.45-8' }
+  let!(:pis_invalid) { '37800018268' }
+
 end

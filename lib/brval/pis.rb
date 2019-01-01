@@ -2,7 +2,7 @@ module Brval
   class Pis
 
     def valid? pis
-      validate_cpf(pis)
+      validate_pis(pis)
     end
 
     private
