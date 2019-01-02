@@ -1,9 +1,9 @@
-require "brval/version"
-require "brval/cpf_call"
-require "brval/cnpj_call"
-require "brval/te_call"
-require "brval/pis_call"
-
+require 'brval/version'
+require 'brval/cpf_call'
+require 'brval/cnpj_call'
+require 'brval/te_call'
+require 'brval/pis_call'
+# main module
 module Brval
   extend CpfCall
   extend CnpjCall
@@ -11,7 +11,4 @@ module Brval
   extend PisCall
 
   class Error < StandardError; end
-  
-
-
 end
