@@ -48,5 +48,29 @@ RSpec.describe Brval do
       # Add a test with mask
     end
 
+    context "Te (electoral title) values" do
+      it "should return true .te_valid?" do
+        valid = Brval.te_valid?(te_valid)
+        expect(valid).to be(true)
+      end
+
+      it "should return true .te_valid? (Te code from Sao Paulo)" do
+        valid = Brval.te_valid?(te_valid_sp)
+        expect(valid).to be(true)
+      end
+
+      it "should return true .te_valid? (Te code from Minas Gerais)" do
+        valid = Brval.te_valid?(te_valid_mg)
+        expect(valid).to be(true)
+      end
+
+      it "should return false .te_valid?" do
+        valid = Brval.te_valid?(te_invalid)
+        expect(valid).to be(false)
+      end
+      
+      # Add a test with mask
+    end
+
   end
 end

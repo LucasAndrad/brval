@@ -10,7 +10,6 @@ module Brval
 
     def validate_te te
       return false if te.nil?
-
       value = te.scan /[0-9]/
       if value.length == 12
         value = value.collect{|x| x.to_i}

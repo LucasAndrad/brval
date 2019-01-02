@@ -11,4 +11,10 @@ RSpec.shared_context "codes", a: :b do
   let!(:pis_valid_mask) { '648.79586.45-8' }
   let!(:pis_invalid) { '37800018268' }
 
+  let!(:te_valid) { '557415802020' }
+  let!(:te_valid_sp) { '168508380191' }
+  let!(:te_valid_mg) { '185815740205' }
+  let!(:te_invalid) { '043230002046' }
+  # let!(:te_valid_mask) { '' }
+
 end
