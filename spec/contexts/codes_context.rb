@@ -12,9 +12,14 @@ RSpec.shared_context "codes", a: :b do
   let!(:pis_invalid) { '37800018268' }
 
   let!(:te_valid) { '557415802020' }
+  # let!(:te_valid_mask) { '' }
   let!(:te_valid_sp) { '168508380191' }
   let!(:te_valid_mg) { '185815740205' }
   let!(:te_invalid) { '043230002046' }
-  # let!(:te_valid_mask) { '' }
+
+  let!(:cnh_valid) { '05639933755' }
+  # let!(:cnh_valid_mask) { '' }
+  let!(:cnh_invalid_equal) { '22222222222' }
+  let!(:cnh_invalid) { '12345678912' }
 
 end

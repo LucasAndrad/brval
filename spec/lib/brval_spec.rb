@@ -72,21 +72,22 @@ RSpec.describe Brval do
     end
 
     context 'CNH values' do
-      it 'should be false if cnh digits < 11' do
-        expect(Brval::Cnh.valid?('')).to eq(false)
+      it 'should be false if all digits are equal' do
+        expect(Brval.cnh_valid?(cnh_invalid_equal)).to eq(false)
       end
 
-      it 'should be false if all digits are equal' do
-        expect(Brval::Cnh.valid?('22222222222')).to eq(false)
+      it 'should be false if cnh digits < 11' do
+        expect(Brval.cnh_valid?('')).to eq(false)
       end
 
       it 'should be true with valid cnh' do
-        expect(Brval::Cnh.valid?('05639933755')).to eq(true)
+        expect(Brval.cnh_valid?(cnh_valid)).to eq(true)
       end
 
       it 'should be false with invalid cnh' do
-        expect(Brval::Cnh.valid?('12345678912')).to eq(false)
+        expect(Brval.cnh_valid?(cnh_invalid)).to eq(false)
       end
     end
+
   end
 end
