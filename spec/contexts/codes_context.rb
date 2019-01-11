@@ -22,4 +22,8 @@ RSpec.shared_context "codes", a: :b do
   let!(:cnh_invalid_equal) { '22222222222' }
   let!(:cnh_invalid) { '12345678912' }
 
+  let!(:lawsuit_valid) { '00020802520125150049' }
+  let!(:lawsuit_valid_mask) { '0002080-25.2012.5.15.0049' }
+  let!(:lawsuit_invalid) { '00020802520125330099' }
+
 end

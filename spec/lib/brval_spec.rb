@@ -29,7 +29,6 @@ RSpec.describe Brval do
         valid = Brval.cnpj_valid?(cnpj_invalid)
         expect(valid).to be(false)
       end
-
       # Add a test with mask
     end
 
@@ -87,6 +86,25 @@ RSpec.describe Brval do
       it 'should be false with invalid cnh' do
         expect(Brval.cnh_valid?(cnh_invalid)).to eq(false)
       end
+    end
+
+    context 'Lawsuits values' do
+      it 'should return true .lawsuit_valid?' do
+        valid = Brval.lawsuit_valid?(lawsuit_valid)
+        expect(valid).to be(true)
+      end
+
+      it 'should return true .lawsuit_valid? with mask' do
+        valid = Brval.lawsuit_valid?(lawsuit_valid_mask)
+        expect(valid).to be(true)
+      end
+
+      it 'should return false .lawsuit_valid?' do
+        valid = Brval.lawsuit_valid?(lawsuit_invalid)
+        expect(valid).to be(false)
+      end
+
+      # Add a test with mask
     end
 
   end
