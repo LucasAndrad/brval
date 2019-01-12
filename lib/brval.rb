@@ -1,4 +1,5 @@
 require 'brval/version'
+require 'brval/val'
 require 'brval/cnh_call'
 require 'brval/cnpj_call'
 require 'brval/cpf_call'
