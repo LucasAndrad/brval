@@ -1,16 +1,16 @@
 # Te = Titulo Eleitoral
 module Brval
-  class Te
+  class Te < Val
 
-    def valid? te
-      validate_te(te)
+    def valid?
+      validate_te
     end
 
     private
 
-    def validate_te te
-      return false if te.nil?
-      value = te.scan /[0-9]/
+    def validate_te
+      return false if @code.nil?
+      value = @code.scan /[0-9]/
       if value.length == 12
         value = value.collect{|x| x.to_i}
         digit1 = calc_digit1(value)
