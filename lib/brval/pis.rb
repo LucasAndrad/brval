@@ -1,16 +1,16 @@
 module Brval
-  class Pis
+  class Pis < Val
 
-    def valid? pis
-      validate_pis(pis)
+    def valid?
+      validate_pis
     end
 
     private
 
-    def validate_pis pis
-      return false if pis.nil?
+    def validate_pis
+      return false if @code.nil?
 
-      value = pis.scan /[0-9]/
+      value = @code.scan /[0-9]/
       if value.length == 11
         value = value.collect{|x| x.to_i}
         sum = 3*value[0] + 2*value[1] + 9*value[2] + 8*value[3] + 7*value[4] + 6*value[5] + 5*value[6] + 4*value[7] + 3*value[8] + 2*value[9]
