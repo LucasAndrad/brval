@@ -4,7 +4,7 @@ module Brval
   module CpfCall
 
     def cpf_valid? cpf 
-      Cpf.new().valid?(cpf)
+      Cpf.new(cpf).valid?
     end
 
   end

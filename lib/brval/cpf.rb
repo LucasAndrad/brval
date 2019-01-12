@@ -1,8 +1,8 @@
 module Brval
-  class Cpf
+  class Cpf < Val
 
-    def valid? cpf
-      validate_cpf(cpf)
+    def valid?
+      validate_cpf
     end
 
     private
@@ -10,12 +10,12 @@ module Brval
     NULLS = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000 01234567890}.freeze
 
     # function from https://gist.github.com/lucascaton/1109488
-    def validate_cpf cpf=nil
+    def validate_cpf
       # remote_mask(cpf)
       # Add errors after initialize CPF this class if cpf has wrong value
-      return false if cpf.nil?
+      return false if @code.nil?
 
-      value = cpf.scan /[0-9]/
+      value = @code.scan /[0-9]/
       if value.length == 11
         unless NULLS.include?(value.join)
           value = value.collect{|x| x.to_i}
