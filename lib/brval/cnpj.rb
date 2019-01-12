@@ -1,8 +1,8 @@
 module Brval
-  class Cnpj
+  class Cnpj < Val
     
-    def valid? cnpj
-      validate_cnpj(cnpj)
+    def valid?
+      validate_cnpj
     end
 
     private
@@ -10,12 +10,10 @@ module Brval
     NULLS = %w{11111111111111 22222222222222 33333333333333 44444444444444 55555555555555 66666666666666 77777777777777 88888888888888 99999999999999 00000000000000}.freeze
 
     # function from https://gist.github.com/lucascaton/1109488
-    def validate_cnpj cnpj=nil
-      # remote_mask(cpf)
-      # Add errors after initialize CNPJ this class if cpf has wrong value
-      return false if cnpj.nil?
+    def validate_cnpj
+      return false if @code.nil?
     
-      value = cnpj.scan /[0-9]/
+      value = @code.scan /[0-9]/
       if value.length == 14
         unless NULLS.include?(value.join)
           value = value.collect{|x| x.to_i}
@@ -30,7 +28,7 @@ module Brval
           end
         end
       end
-      return false # invalid CNPJ
+      false # invalid CNPJ
     end
 
   end
