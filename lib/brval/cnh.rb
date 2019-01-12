@@ -1,19 +1,19 @@
 module Brval
     # Validate CNH
-  class Cnh
+  class Cnh < Val
 
-    def valid? cnpj
-      validate_cnh(cnpj)
+    def valid?
+      validate_cnh
     end
 
     private
 
-    def validate_cnh(cnh)
-      return false if cnh.length < 11
-      return false if cnh[0] * 11 == cnh
+    def validate_cnh
+      return false if @code.length < 11
+      return false if @code[0] * 11 == @code
 
-      cnh_without_digits = cnh[0..8]
-      cnh_digits = cnh[-2..-1]
+      cnh_without_digits = @code[0..8]
+      cnh_digits = @code[-2..-1]
       incr_dig2 = 0
 
       sum = 0
