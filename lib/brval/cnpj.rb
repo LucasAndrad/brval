@@ -1,16 +1,12 @@
 module Brval
   class Cnpj < Val
-    
-    def valid?
-      validate_cnpj
-    end
 
     private
 
     NULLS = %w{11111111111111 22222222222222 33333333333333 44444444444444 55555555555555 66666666666666 77777777777777 88888888888888 99999999999999 00000000000000}.freeze
 
     # function from https://gist.github.com/lucascaton/1109488
-    def validate_cnpj
+    def validate_code
       return false if @code.nil?
     
       value = @code.scan /[0-9]/

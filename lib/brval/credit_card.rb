@@ -1,6 +1,8 @@
 module Brval
   class CreditCard < Val
     
+    private 
+    
     def validate_code
       raise ArgumentError, 'Credit card number must have 16 digits' if @code.length != 16
       value = @code.scan /[0-9]/
@@ -36,19 +38,3 @@ module Brval
 
   end
 end
-# 1,2
-# 3,4
-# 5,6
-# 7,8
-# 9,10
-# 11,12
-# 13,14
-# 15
-
-# 3  0  1  1  1  1  9  8  7  6  3  3  3               
-# x  x  x  x  x  x  x  x  x  x  x  x  x               
-# 2  1  2  1  2  1  2  1  2  1  2  1  2
-
-# 6 +0 +2 +1 +2 +1 +9*+8 +5*+6 +6 +3 +6=55 para 60=5(este é o DV). 
-
-# 3011119876333

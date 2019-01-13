@@ -2,13 +2,9 @@
 module Brval
   class Te < Val
 
-    def valid?
-      validate_te
-    end
-
     private
 
-    def validate_te
+    def validate_code
       return false if @code.nil?
       value = @code.scan /[0-9]/
       if value.length == 12

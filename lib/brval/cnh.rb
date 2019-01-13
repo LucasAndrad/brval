@@ -2,13 +2,9 @@ module Brval
     # Validate CNH
   class Cnh < Val
 
-    def valid?
-      validate_cnh
-    end
-
     private
 
-    def validate_cnh
+    def validate_code
       return false if @code.length < 11
       return false if @code[0] * 11 == @code
 

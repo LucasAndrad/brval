@@ -1,13 +1,9 @@
 module Brval
   class Pis < Val
 
-    def valid?
-      validate_pis
-    end
-
     private
 
-    def validate_pis
+    def validate_code
       return false if @code.nil?
 
       value = @code.scan /[0-9]/
