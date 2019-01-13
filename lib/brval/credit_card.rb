@@ -3,6 +3,7 @@ module Brval
     
     private 
     
+    # Calc from: http://datagenetics.com/blog/july42013/index.html
     def validate_code
       raise ArgumentError, 'Credit card number must have 16 digits' if @code.length != 16
       value = @code.scan /[0-9]/
