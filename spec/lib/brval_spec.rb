@@ -103,8 +103,23 @@ RSpec.describe Brval do
         valid = Brval.lawsuit_valid?(lawsuit_invalid)
         expect(valid).to be(false)
       end
+    end
 
-      # Add a test with mask
+    context 'Credit cards values' do
+      it 'should return true .credit_card_valid?' do
+        valid = Brval.credit_card_valid?(credit_card_valid)
+        expect(valid).to be(true)
+      end
+
+      it 'should return true .credit_card_valid? with mask' do
+        valid = Brval.credit_card_valid?(credit_card_valid_mask)
+        expect(valid).to be(true)
+      end
+
+      it 'should return false .credit_card_valid?' do
+        valid = Brval.credit_card_valid?(credit_card_invalid)
+        expect(valid).to be(false)
+      end
     end
 
   end

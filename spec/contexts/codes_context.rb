@@ -26,4 +26,8 @@ RSpec.shared_context "codes", a: :b do
   let!(:lawsuit_valid_mask) { '0002080-25.2012.5.15.0049' }
   let!(:lawsuit_invalid) { '00020802520125330099' }
 
+  let!(:credit_card_valid) { '5121394634164123' }
+  let!(:credit_card_valid_mask) { '5147 0366 1901 9661' }
+  let!(:credit_card_invalid) { '5452843042855053' }
+
 end
