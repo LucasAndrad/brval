@@ -7,6 +7,7 @@ group :development, :test do
   gem 'rubycritic'
   gem 'rspec'
   gem 'simplecov', :require => false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'json'
 
