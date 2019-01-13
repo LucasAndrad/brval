@@ -1,10 +1,10 @@
-require "brval/renvam"
+require "brval/renavam"
 
 module Brval
-  module RenvamCall
+  module RenavamCall
 
-    def renvam_valid? renvam
-      Renvam.new(renvam).valid?
+    def renavam_valid? renavam
+      Renavam.new(renavam).valid?
     end
 
   end

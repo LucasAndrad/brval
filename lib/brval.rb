@@ -6,7 +6,7 @@ require 'brval/cpf_call'
 require 'brval/credit_card_call'
 require 'brval/lawsuit_call'
 require 'brval/pis_call'
-require 'brval/renvam_call'
+require 'brval/renavam_call'
 require 'brval/te_call'
 # main module
 module Brval
