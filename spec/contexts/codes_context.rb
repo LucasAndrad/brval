@@ -30,4 +30,7 @@ RSpec.shared_context "codes", a: :b do
   let!(:credit_card_valid_mask) { '5147 0366 1901 9661' }
   let!(:credit_card_invalid) { '5452843042855053' }
 
+  let!(:renavam_valid) { '13976494983' }
+  let!(:renavam_invalid) { '13976494113' }
+
 end

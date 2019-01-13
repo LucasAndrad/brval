@@ -122,5 +122,17 @@ RSpec.describe Brval do
       end
     end
 
+    context 'Renavam values' do
+      it 'should return true .renavam_valid?' do
+        valid = Brval.renavam_valid?(renavam_valid)
+        expect(valid).to be(true)
+      end
+
+      it 'should return false .renavam_valid?' do
+        valid = Brval.renavam_valid?(renavam_invalid)
+        expect(valid).to be(false)
+      end
+    end
+
   end
 end
