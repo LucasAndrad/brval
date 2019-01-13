@@ -8,5 +8,9 @@ module Brval
       @code = code.tr('^0-9', '')
     end
 
+    def valid?
+      validate_code
+    end
+
   end
 end
