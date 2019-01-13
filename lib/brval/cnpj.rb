@@ -9,7 +9,7 @@ module Brval
     def validate_code
       return false if @code.nil?
     
-      value = @code.scan /[0-9]/
+      value = @code.split('')
       if value.length == 14
         unless NULLS.include?(value.join)
           value = value.collect{|x| x.to_i}

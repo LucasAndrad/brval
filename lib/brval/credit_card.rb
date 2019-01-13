@@ -6,7 +6,7 @@ module Brval
     # Calc from: http://datagenetics.com/blog/july42013/index.html
     def validate_code
       raise ArgumentError, 'Credit card number must have 16 digits' if @code.length != 16
-      value = @code.scan /[0-9]/
+      value = @code.split('')
       if value.length == 16
         sum = sum_nums(value[0..14])
         sum_complete = treat_sum(sum.digits.reverse)

@@ -4,6 +4,6 @@ rvm:
 notifications:
   - false
 
-before_install: gem install bundler -v 1.17
+before_install: gem install bundler -v 1.17.3
 scripts:
   - rspec

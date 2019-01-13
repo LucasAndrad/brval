@@ -6,7 +6,7 @@ module Brval
 
     def validate_code
       return false if @code.nil?
-      value = @code.scan /[0-9]/
+      value = @code.split('')
       if value.length == 12
         value = value.collect{|x| x.to_i}
         digit1 = calc_digit1(value)
