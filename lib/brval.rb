@@ -6,6 +6,7 @@ require 'brval/cpf_call'
 require 'brval/credit_card_call'
 require 'brval/lawsuit_call'
 require 'brval/pis_call'
+require 'brval/renvam_call'
 require 'brval/te_call'
 # main module
 module Brval
@@ -15,6 +16,7 @@ module Brval
   extend CreditCardCall
   extend LawsuitCall
   extend PisCall
+  extend RenavamCall
   extend TeCall
 
   class Error < StandardError; end
