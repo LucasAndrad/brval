@@ -12,6 +12,7 @@ module Brval
   extend CnhCall
   extend CnpjCall
   extend CpfCall
+  extend CreditCardCall
   extend LawsuitCall
   extend PisCall
   extend TeCall
