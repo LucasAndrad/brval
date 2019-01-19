@@ -7,11 +7,13 @@ module Cep
     end
 
     def check
+      return false if @cep.nil? || @cep.length > 8
       json = load_cep_json
       json_valid?(json)
     end
 
     def info
+      return response_error if @cep.nil? || @cep.length > 8
       json = load_cep_json
       json_valid?(json) ? translate_params(json) : response_error
     end

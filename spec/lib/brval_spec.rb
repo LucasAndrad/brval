@@ -1,8 +1,10 @@
 require 'spec_helper'
 require './spec/contexts/codes_context.rb'
+require './spec/contexts/cep_codes_context.rb'
 
 RSpec.describe Brval do
   include_context 'codes'
+  include_context 'cep_codes'
 
   describe 'Brval tests' do
     context 'CPF values' do
@@ -130,6 +132,18 @@ RSpec.describe Brval do
 
       it 'should return false .renavam_valid?' do
         valid = Brval.renavam_valid?(renavam_invalid)
+        expect(valid).to be(false)
+      end
+    end
+
+    context 'Cep values' do
+      it 'should return true .cep_valid?' do
+        valid = Brval.cep_valid?(cep_valid)
+        expect(valid).to be(true)
+      end
+
+      it 'should return false .cep_valid?' do
+        valid = Brval.cep_valid?(cep_invalid)
         expect(valid).to be(false)
       end
     end

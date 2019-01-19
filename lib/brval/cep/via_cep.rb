@@ -11,7 +11,7 @@ module Cep
     private
 
     def json_valid? json
-      return false unless json['erro'].nil?
+      return false if json.key?('erro')
       json.key?('logradouro') && json.key?('bairro') && json.key?('localidade') && json.key?('uf')
     end
 
