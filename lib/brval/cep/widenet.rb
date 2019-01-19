@@ -18,7 +18,8 @@ module Cep
     end
 
     def info
-      load_cep_json
+      json = load_cep_json
+      translate_params(json)
     end
 
     private
@@ -32,6 +33,20 @@ module Cep
     def json_valid?(json)
       return false if json['message'] == 'CEP não encontrado'
       json.key?('district') && json.key?('city') && json.key?('address') && json.key?('state')
+    end
+
+    def translate_params(json)
+      json.delete 'status'
+      json['cep'] = json.delete 'code'
+      json['address'] = json.delete 'address'
+      json['complement'] = ''
+      json['neighborhood'] = json.delete 'district'
+      json['city'] = json.delete 'city'
+      json['state'] = json.delete 'state'
+      json['unit'] = ''
+      json['ibge'] = ''
+      json['gia'] = ''
+      json
     end
 
     
