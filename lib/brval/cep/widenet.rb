@@ -1,7 +1,7 @@
 module Cep
   class Widenet
 
-    # Thanks you WideNet for this API
+    # Thank you WideNet for this API
     # apps.widenet.com.br/busca-cep/api-de-consulta
 
     URL_HOME = 'http://apps.widenet.com.br/busca-cep/api/cep/'.freeze
@@ -30,7 +30,7 @@ module Cep
     end
 
     def json_valid?(json)
-      return false unless json['erro'].nil?
+      return false if json['message'] == 'CEP não encontrado'
       json.key?('district') && json.key?('city') && json.key?('address') && json.key?('state')
     end
 

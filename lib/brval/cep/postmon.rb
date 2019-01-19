@@ -1,5 +1,8 @@
 module Cep
   class Postmon
+
+    # Thank you Postmon for this API
+    # https://postmon.com.br/
     URL_HOME = 'https://api.postmon.com.br/v1/cep/'.freeze
     attr_accessor :cep, :url
 
@@ -27,7 +30,7 @@ module Cep
     end
 
     def json_valid?(json)
-      return false unless json['erro'].nil?
+      return false if json.nil?
       json.key?('bairro') && json.key?('logradouro') && json.key?('cidade') && json.key?('estado')
     end
 
