@@ -21,6 +21,23 @@ RSpec.describe Brval do
         expect(invalid).to be(false)
       end
     end
+
+    context 'Cep info method' do
+      it 'should get the info of a valid cep' do
+        info = Cep::Postmon.new(cep_valid).info
+        expect(info['address']).to eq('EQS 414/415')
+      end
+
+      it 'should get the info of a valid cep with mask' do
+        info = Cep::Postmon.new(cep_valid_mask).info
+        expect(info['address']).to eq('EQS 414/415')
+      end
+
+      # it 'should not get the info of an invalid cep' do
+      #   info = Cep::Postmon.new(cep_invalid).info
+      #   expect(info['error']).to eq('Nenhum cep encontrado')
+      # end
+    end
   end
 
 end
