@@ -11,7 +11,7 @@ module Cep
 
     def check
       json = load_cep_json
-      # json_valid?(json)
+      json_valid?(json)
     end
 
     def info
@@ -27,8 +27,8 @@ module Cep
     end
 
     def json_valid?(json)
-      return false if json['erro'].present?
-      json['logradouro'].present? && json['bairro'] && json['localidade'].present? && json['uf'].present?
+      return false unless json['erro'].nil?
+      json.key?('logradouro') && json.key?('bairro') && json.key?('localidade') && json.key?('uf')
     end
 
   end
