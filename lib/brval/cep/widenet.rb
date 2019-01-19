@@ -30,12 +30,12 @@ module Cep
       JSON.parse(response.body)
     end
 
-    def json_valid?(json)
+    def json_valid? json
       return false if json['message'] == 'CEP não encontrado'
       json.key?('district') && json.key?('city') && json.key?('address') && json.key?('state')
     end
 
-    def translate_params(json)
+    def translate_params json
       json.delete 'status'
       json['cep'] = json.delete 'code'
       json['address'] = json.delete 'address'

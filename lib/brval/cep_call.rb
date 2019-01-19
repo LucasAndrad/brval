@@ -1,7 +1,3 @@
-# require 'brval/cep/postmon'
-# require 'brval/cep/via_cep'
-# require 'brval/cep/widenet'
-
 module Brval::CepCall
 
   def cep_valid?(cep)

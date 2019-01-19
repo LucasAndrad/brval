@@ -27,12 +27,12 @@ module Cep
       JSON.parse(response.body)
     end
 
-    def json_valid?(json)
+    def json_valid? json
       return false unless json['erro'].nil?
       json.key?('logradouro') && json.key?('bairro') && json.key?('localidade') && json.key?('uf')
     end
 
-    def translate_params(json)
+    def translate_params json
       json['address'] = json.delete 'logradouro'
       json['complement'] = json.delete 'complemento'
       json['neighborhood'] = json.delete 'bairro'
