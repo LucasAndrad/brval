@@ -5,7 +5,7 @@ RSpec.describe Brval do
   include_context 'cep_codes'
 
   describe 'Postmon tests' do
-    context 'Cep check method' do
+    context 'check method' do
       it 'should check a valid cep' do
         valid = Cep::Postmon.new(cep_valid).check
         expect(valid).to be(true)
@@ -22,7 +22,7 @@ RSpec.describe Brval do
       end
     end
 
-    context 'Cep info method' do
+    context 'info method' do
       it 'should get the info of a valid cep' do
         info = Cep::Postmon.new(cep_valid).info
         expect(info['address']).to eq('EQS 414/415')
@@ -33,10 +33,10 @@ RSpec.describe Brval do
         expect(info['address']).to eq('EQS 414/415')
       end
 
-      # it 'should not get the info of an invalid cep' do
-      #   info = Cep::Postmon.new(cep_invalid).info
-      #   expect(info['error']).to eq('Nenhum cep encontrado')
-      # end
+      it 'should not get the info of an invalid cep' do
+        info = Cep::Postmon.new(cep_invalid).info
+        expect(info['error']).to eq("Nenhum cep encontrado para: #{cep_invalid}")
+      end
     end
   end
 
