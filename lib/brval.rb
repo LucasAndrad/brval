@@ -12,6 +12,7 @@ require 'brval/renavam_call'
 require 'brval/te_call'
 
 require 'brval/cep/via_cep'
+require 'brval/cep/widenet'
 require 'brval/cep_call'
 
 # main module
