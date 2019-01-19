@@ -146,6 +146,16 @@ RSpec.describe Brval do
         valid = Brval.cep_valid?(cep_invalid)
         expect(valid).to be(false)
       end
+
+      it 'should return the info for a valid cep .cep_info' do
+        info = Brval.cep_info(cep_valid)
+        expect(info['address']).to eq('EQS 414/415')
+      end
+
+      it 'should not return the info for invalid cep .cep_info' do
+        info = Brval.cep_info(cep_invalid)
+        expect(info['error']).to eq("Nenhum cep encontrado para: #{cep_invalid}")
+      end
     end
 
   end

@@ -9,7 +9,7 @@ module Brval::CepCall
   def cep_info(cep)
     cep = cep.to_s.tr('^0-9', '')
     return false if cep.nil? || cep.length > 8
-    call_apis_check(cep)
+    call_apis_info(cep)
   end
 
   private
