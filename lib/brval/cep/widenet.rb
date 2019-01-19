@@ -14,7 +14,7 @@ module Cep
     private
 
     def json_valid? json
-      return false if json['message'] == 'CEP não encontrado'
+      return false if json.key?('message')
       json.key?('district') && json.key?('city') && json.key?('address') && json.key?('state')
     end
 
