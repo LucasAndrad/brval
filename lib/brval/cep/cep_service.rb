@@ -3,7 +3,7 @@ module Cep
     attr_accessor :cep, :url
 
     def initialize cep
-      @cep = cep.tr('^0-9', '')
+      @cep = cep.to_s.tr('^0-9', '')
     end
 
     def check
@@ -13,7 +13,7 @@ module Cep
 
     def info
       json = load_cep_json
-      translate_params(json)
+      json_valid?(json) ? translate_params(json) : response_error
     end
 
     private
@@ -22,6 +22,10 @@ module Cep
       response = HTTParty.get(@url)
       return nil if response.code != 200
       JSON.parse(response.body)
+    end
+
+    def response_error
+      { 'error' => "Nenhum cep encontrado para: #{@cep}" }
     end
 
   end

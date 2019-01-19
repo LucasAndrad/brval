@@ -2,7 +2,6 @@ module Brval::CepCall
 
   def cep_valid?(cep)
     return false if cep.nil?
-    cep = cep.to_s.tr('^0-9', '')
     call_apis(cep)
   end
 
