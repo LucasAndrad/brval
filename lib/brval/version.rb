@@ -1,3 +1,3 @@
 module Brval
-  VERSION = "0.2.2"
+  VERSION = "0.7.0"
 end
