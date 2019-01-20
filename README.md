@@ -1,5 +1,5 @@
 # Brval
-This is a gem to validate many Brazilian codes. Because it's common to use many gems, libs and even copy and paste methods found around the internet.
+This is a gem to validate many Brazilian codes. Because it's common to use many gems, libs and even copy and paste methods found around the internet to do that.
 
 So the idea of Brval gem is: reunite all those validations methods in one single gem, making our lives even "easier" to develop Ruby apps.
 
@@ -79,11 +79,11 @@ The gem uses the same procedure to get the info of some CEP with the function: `
 
 ## Contributing
 
-If you miss any validation create an Issue explaining about it, if possible, leave some links with the calculation or any formula example about the validation. I will be happy trying to implement that to help you.
+If you miss any validation, create an Issue explaining about it, if possible, leave some links with the calculation or any formula example about the validation. I will be happy trying to implement that to help you.
 
 If you want to contribute with some code create an issue so we can discuss about, if everyone agree with your idea, create a fork, create your branch and send your pull request explaining the details about your PR.
 
-Don't forget the tests, Brval use Rspec to test. Update the README if the new info. Also, try to follow the gem pattern to implement your contribution.
+Don't forget the tests, Brval use Rspec to test. Update the README with the new info. Also, try to follow the gem pattern to implement your contribution.
 
 Thanks!
 
