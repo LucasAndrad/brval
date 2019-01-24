@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    brval (0.7.1)
+    brval (0.9.6)
       httparty (~> 0.16.3)
 
 GEM
