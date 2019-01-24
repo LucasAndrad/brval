@@ -43,7 +43,7 @@ Brval.cep_valid?('70297-400') # => true
 
 ### Lista da Funções
 ### Functions List
-Above is the list with all the functions and validations avaible on Brval gem, after that a resume explaining about CEP validation:
+Above is the list with all the functions and validations avaible on Brval gem.
 
 | Function                  | Return      | Description |
 |-------------------------|--------------|-----------|
@@ -60,7 +60,7 @@ Above is the list with all the functions and validations avaible on Brval gem, a
 
 
 ### CEP Validation
-Brazilian postal code, CEP, doesn't has any formula or calculation to check is some CEP is valid or not, the only way to know that is searching in a database with all CEP's in Brazil
+Brazilian postal code, CEP, doesn't has any formula or calculation to check if some CEP is valid or not, the only way to know that is searching in a database with all CEP's in Brazil
 
 Apparently Correios doesn't provides any database with all CEP's of Brazil, so some devs developer their own services to search for a CEP info, some of those services are public API's and anyone can use it.
 
@@ -74,7 +74,7 @@ Considering this, Brval does the CEP validation following this flow:
 
 The gem uses the same procedure to get the info of some CEP with the function: `Brval.cep_info(00000000)`
 
- **OBS:** the gem "only" search in three API's, so if a CEP exists but any of these API's doesn't have it, the gem will return a false negative.
+ **OBS:** the gem "only" search in three API's, if a CEP exists but any of these API's doesn't have it, the gem will return a false negative.
 
 
 ## Contributing
@@ -84,6 +84,16 @@ If you miss any validation, create an Issue explaining about it, if possible, le
 If you want to contribute with some code create an issue so we can discuss about, if everyone agree with your idea, create a fork, create your branch and send your pull request explaining the details about your PR.
 
 Don't forget the tests, Brval use Rspec to test. Update the README with the new info. Also, try to follow the gem pattern to implement your contribution.
+
+### Run the gem from local project
+You can run the gem with: `rake console`
+
+And before send your PR make a simulation installing the gem locally with your changes, just run the `./build.sh` script.
+
+```
+chmod +x build.sh
+./build.sh
+```
 
 Thanks!
 
