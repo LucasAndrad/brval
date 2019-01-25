@@ -7,5 +7,9 @@ module Brval
       Cnpj.new(cnpj).valid?
     end
 
+    def cnpj_mask cnpj
+      Cnpj.new(cnpj).mask
+    end
+
   end
 end
