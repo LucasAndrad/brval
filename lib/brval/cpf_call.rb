@@ -7,5 +7,9 @@ module Brval
       Cpf.new(cpf).valid?
     end
 
+    def cpf_mask cpf
+      Cpf.new(cpf).mask
+    end
+
   end
 end
