@@ -3,7 +3,7 @@ module Brval
 
     def mask
       super
-      code.insert(3, '.').insert(7, '.').insert(11, '-')
+      code_mask.insert(3, '.').insert(7, '.').insert(11, '-')
     end
 
     private

@@ -8,12 +8,8 @@ module Brval
       @code = code.tr('^0-9', '')
     end
 
-    def unmask
-      @code
-    end
-
     def mask
-      code = @code.dup
+      code_mask = @code.dup
     end
 
     def valid?
