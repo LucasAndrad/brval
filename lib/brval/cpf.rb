@@ -2,7 +2,7 @@ module Brval
   class Cpf < Val
 
     def mask
-      super
+      code_mask = super
       code_mask.insert(3, '.').insert(7, '.').insert(11, '-')
     end
 
