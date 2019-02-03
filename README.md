@@ -51,7 +51,9 @@ Above is the list with all the functions and validations avaible on Brval gem.
 | Brval.cep_info?         |json          | Json with cep information          |
 | Brval.cnh_valid?        |true/false    |           |
 | Brval.cnpj_valid?       |true/false    |           |
+| Brval.cnpj_mask          |CNPJ com máscara| retorna o CNPJ com máscara: 00.000.000/0000-00 |
 | Brval.cpf_valid?        |true/false    |           |
+| Brval.cpf_mask          |CPF com máscara| retorna o CPF com máscara: 000.000.000-00 |
 | Brval.credit_card_valid?|true/false    | Number of credit card with 16 digits |
 | Brval.lawsuit_valid?    |true/false    | Number of judicial process|
 | Brval.pis_valid?        |true/false    | Same validation for: PIS/PASEP/NIT |
