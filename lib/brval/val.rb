@@ -4,15 +4,17 @@ module Brval
     attr_accessor :code
 
     def initialize(code)
-      raise ArgumentError, 'The br code informed is nil' if code.nil?
+      return if code.nil?
       @code = code.tr('^0-9', '')
     end
 
     def mask
+      return if @code.nil?
       code_mask = @code.dup
     end
 
     def valid?
+      return false if @code.nil?
       validate_code
     end
 
