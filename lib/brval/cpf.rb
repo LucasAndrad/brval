@@ -1,9 +1,8 @@
 module Brval
   class Cpf < Val
 
-    def mask
-      code_mask = super
-      code_mask.insert(3, '.').insert(7, '.').insert(11, '-')
+    def masked
+      @code.dup.insert(3, '.').insert(7, '.').insert(11, '-')
     end
 
     private

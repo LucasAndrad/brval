@@ -1,9 +1,8 @@
 module Brval
   class Cnpj < Val
 
-    def mask
-      code_mask = super
-      code_mask.insert(2, '.').insert(6, '.').insert(10, '/').insert(15, '-')
+    def masked
+      @code.dup.insert(2, '.').insert(6, '.').insert(10, '/').insert(15, '-')
     end
 
     private
