@@ -18,7 +18,15 @@ RSpec.describe Brval do
         expect(valid).to be(false)
       end
 
-      # Add a test with mask
+      it 'should return true .cpf_mask' do
+        masked = Brval.cpf_mask(cpf_valid)
+        expect(masked).to eql(cpf_valid.insert(3, '.').insert(7, '.').insert(11, '-'))
+      end
+
+      it 'should return false .cpf_mask' do
+        masked = Brval.cpf_mask(cpf_valid)
+        expect(masked).not_to eql(cpf_valid)
+      end
     end
 
     context 'CNPJ values' do
@@ -31,7 +39,16 @@ RSpec.describe Brval do
         valid = Brval.cnpj_valid?(cnpj_invalid)
         expect(valid).to be(false)
       end
-      # Add a test with mask
+
+      it 'should return true .cnpj_mask' do
+        masked = Brval.cnpj_mask(cnpj_valid)
+        expect(masked).to eql(cnpj_valid.insert(2, '.').insert(6, '.').insert(10, '/').insert(15, '-'))
+      end
+
+      it 'should return false .cnpj_mask' do
+        masked = Brval.cnpj_mask(cnpj_valid)
+        expect(masked).not_to eql(cnpj_valid)
+      end
     end
 
     context 'Pis values' do

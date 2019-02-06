@@ -10,7 +10,7 @@ module Brval
 
     def mask
       return if @code.nil?
-      code_mask = @code.dup
+      masked
     end
 
     def valid?
