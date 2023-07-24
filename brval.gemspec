@@ -41,6 +41,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubycritic', '~> 3.5'
   spec.add_development_dependency 'rubocop', '~> 0.62.0'
   spec.add_development_dependency 'json', '~> 2.1'
-  spec.add_dependency 'httparty', '~> 0.16.3'
+  spec.add_dependency 'httparty', '~> 0.21.0'
 
 end
