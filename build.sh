@@ -2,7 +2,7 @@
 
 # Script to build gem 
 
-rm brval-*.gem
-gem build brval.gemspec
-gem install ./brval-*.gem
-irb -r 'brval'
+rm brval2-*.gem
+gem build brval2.gemspec
+gem install ./brval2-*.gem
+irb -r 'brval2'

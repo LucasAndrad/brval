@@ -7,4 +7,5 @@
 /spec/reports/
 /tmp/
 
-brval-*.gem
+brval2-*.gem
+.idea/
