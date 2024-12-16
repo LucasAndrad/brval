@@ -3,21 +3,17 @@ This is a gem to validate many Brazilian codes. Because it's common to use many 
 
 So the idea of Brval gem is: reunite all those validations methods in one single gem, making our lives even "easier" to develop Ruby apps.
 
-[Link para ler as instruções em português](https://github.com/LucasAndrad/brval/wiki/Instru%C3%A7%C3%B5es-em-portugu%C3%AAs) (link to read the instructions in portuguese)
-
-NPM package for JS projects coming soon!
-
 ## Installation
 
 Add this line to your Gemfile
 
 ```ruby
-gem 'brval'
+gem 'brval2'
 ```
 
 Or run it direct on terminal:
 
-    $ gem install brval
+    $ gem install brval2
 
 ## Usage
 
