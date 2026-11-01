@@ -151,6 +151,18 @@ RSpec.describe Brval do
         valid = Brval.renavam_valid?(renavam_invalid)
         expect(valid).to be(false)
       end
+
+      it 'should return false for a 10 digit renavam with the wrong check digit' do
+        # renavam has 9, 10 or 11 digits and must be left padded to 11
+        valid = Brval.renavam_valid?('1234567890')
+        expect(valid).to be(false)
+      end
+
+      it 'should return true for a 10 digit renavam padded to 11 digits' do
+        # 1234567897 padded is 01234567897, valid under the gem's own algorithm
+        valid = Brval.renavam_valid?('1234567897')
+        expect(valid).to be(true)
+      end
     end
 
     context 'Cep values' do
