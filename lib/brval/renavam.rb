@@ -5,6 +5,9 @@ module Brval
 
     def validate_code
       @code = "00" + @code if @code.length == 9
+      @code = "0" + @code if @code.length == 10
+      return false if @code.length != 11
+
       ren_cut = @code[0..9]
       ren_reverse = ren_cut.reverse[0..7]
       sum = 0
